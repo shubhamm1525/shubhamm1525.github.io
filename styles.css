@@ -112,6 +112,19 @@ section {
     transition: color 0.3s ease-in-out;
 }
 
+#skills ul{
+    list-style: none;
+    margin: 0;
+    padding: 5px 0px 5px 0px;
+    text-decoration: none;
+}
+
+#skills ul li a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
 
 
 #contact {
@@ -153,4 +166,12 @@ footer {
     position: relative; /* Change from fixed to relative */
     z-index: 2; /* Ensure the footer is above other sections */
     clear: both; /* Clear the floats */
+}
+
+header,
+nav,
+section,
+footer {
+    border-bottom: 1px solid #ddd; /* Add a 1px solid border at the bottom */
+    padding: 20px 0;
 }
