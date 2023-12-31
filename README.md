@@ -28,8 +28,11 @@ Detailed information about my work experience and achievements.
 Contact:
 Ways to get in touch with me, including social media and email.
 Contact
+
 Shubham Maske
+
 code4shubham@gmail.com
+
 LinkedIn
 
 Thank you for visiting my portfolio repository! Feel free to reach out if you have any questions or if you'd like to connect.
