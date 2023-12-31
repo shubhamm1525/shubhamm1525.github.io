@@ -34,6 +34,18 @@ h2 {
     margin-bottom: 20px;
 }
 
+.project h3{
+    border-bottom: 1px solid black;
+}
+
+.workExp {
+    margin-bottom: 20px;
+}
+
+.workExp h3{
+    border-bottom: 1px solid black;
+}
+
 footer {
     background-color: #333;
     color: #fff;
