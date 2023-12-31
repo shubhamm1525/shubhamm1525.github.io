@@ -25,15 +25,7 @@ Showcase of selected projects with descriptions and links.
 Experience:
 Detailed information about my work experience and achievements.
 
-Contact:
-Ways to get in touch with me, including social media and email.
-Contact
-
-Shubham Maske
-
-code4shubham@gmail.com
-
-LinkedIn
+Contact: Shubham Maske (<a href="https://www.linkedin.com/in/shubham-maske-2920b414b/" target="_blank">LinkedIn</a>)
 
 Thank you for visiting my portfolio repository! Feel free to reach out if you have any questions or if you'd like to connect.
 
