@@ -184,6 +184,6 @@ header,
 nav,
 section,
 footer {
-    border-bottom: 1px solid #ddd; /* Add a 1px solid border at the bottom */
+    border-bottom: 2px solid #ddd; /* Add a 1px solid border at the bottom */
     padding: 20px 0;
 }
