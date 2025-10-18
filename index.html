@@ -2,197 +2,269 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Shubham Maske - Salesforce Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham Maske - Salesforce Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>Shubham Maske</h1>
-            <p>Salesforce Developer</p>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <!-- added circular avatar above name -->
+      <img src="images/profile pic.jpg" alt="Shubham Maske" class="hero-avatar">
+      <h1 class="hero-title">Shubham Maske</h1>
+      <p class="hero-subtitle">Salesforce Developer</p>
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+    </div>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#workExp">Work Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="theme-toggle">
+      <!-- theme/logo icon (inline SVG, no external file needed) -->
+      <svg class="theme-logo" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="5" fill="currentColor" />
+        <g stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+        </g>
+      </svg>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Greetings! I'm Shubham Maske, a passionate individual with a foundation in Electronics and
-                Telecommunication Engineering, having graduated in 2017.</p>
+      <input type="checkbox" id="darkToggle" aria-label="Toggle dark mode">
+      <!-- simplified switch label -->
+      <label for="darkToggle" class="toggle-label" role="switch" aria-checked="false">
+        <span class="visually-hidden">Toggle theme</span>
+      </label>
+    </div>
+  </header>
 
-            <p>My professional journey began in Pune, where I served as a Technical Support Engineer for Dell India at
-                Concentrix. After a year, I decided to transition into the software industry, fueled
-                by a desire for a new challenge.</p>
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#workExp">Experience</a></li>
+        <!-- <li><a href="#projects">Projects</a></li> -->
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-            <p>In 2020, I found my niche in Salesforce and embraced the role of a Salesforce Developer at Atmecs
-                Technologies. Over the next three years, I immersed myself in the Salesforce ecosystem, developing
-                proficiency in Apex, Triggers, Flows, and Lightning Web Components.</p>
-
-            <p>Eager for fresh experiences, I recently made a move to Cloud Peritus, where I've been contributing for
-                the past six months.</p>
-
-            <p>Along this journey, I've accumulated four certifications—Salesforce Associate ,Salesforce Certified
-                Administrator, Salesforce Certified Platform Developer I, and Mulesoft Certified Developer - Level I.
-            </p>
-
-            <p>I thrive on turning challenges into opportunities and believe in continuous learning to adapt to the
-                evolving tech landscape. Currently shaping solutions at Cloud Peritus, I'm excited about the potential
-                for collaboration and innovation.</p>
-
-            <p>Let's connect and explore how we can create something extraordinary together!</p>
-        </div>
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          Hi, I’m Shubham Maske
+        </p><br>
+        <p>
+          A passionate Salesforce Developer with 5+ years of experience, crafting smart, scalable, and user-centric Salesforce solutions.
+        </p><br>
+        <p>
+          My journey started with a degree in Electronics and Telecommunication Engineering (2017) — and soon after, I began my career in Pune as a Technical Support Engineer for Dell India. A year later, my curiosity for coding and automation pushed me toward software development, where I discovered my true calling — Salesforce.
+        </p><br>
+        <p>
+          Since joining Atmecs Technologies in 2020, and now working with Cloud Peritus, I’ve built expertise in Apex, Triggers, Flows, and Lightning Web Components (LWC) — bringing ideas to life through clean, efficient code and seamless user experiences.
+        </p><br>
+        <p>
+          Today, I focus on building Salesforce solutions that don’t just meet requirements — but empower businesses to grow faster and work smarter.
+        </p>
+      </div>
     </section>
 
-    <section id="workExp">
-        <div class="container">
-            <h2>Work Experience</h2>
-            <!-- Add your project details here -->
-            <div class="workExp">
-                <h3>Cloud Peritus - Salesforce Developer (2023-Present)</h3>
-                <p>Designing and developing custom Salesforce solutions based on business requirements.</p>
-                <p>Automating business processes using Workflow Rules, Process Builder, and Flow. Writing, testing, and deploying Apex code.</p>
-                <p>Implementing Lightning Web Components for improved user experience.</p>
-                <p>Configuring and maintaining user profiles, roles, permission sets, and security settings to ensure data access control.</p>
-            </div>
-            <div class="workExp">
-                <h3>ATMECS Global - Software Engineer (2020-2023)</h3>
-                <p>Worked as a developer and was involved in deploying the user story and fixing the bugs raised in daily activities.</p>
-                <p>Creating custom object fields, LWC, Updating triggers, and test classes. Developed custom LWC, Objects, Reports and dashboards.</p>
-                <p>Implementing Permission sets, Field level securities, Profiles, Roles, and Resource monitoring.</p>
-                <p>Deployment using Visual Studio code, Version control in GIT, and Gearset.</p>
-            </div>
-            <div class="workExp">
-                <h3>Concentrix India - Technical Support Engineer (2018-2019)</h3>
-                <p>Technical support for Dell consumer series laptops . Provided on-call support to
-                    the customers for hardware and software related issues.</p>
-            </div>
-            <!-- Add more projects as needed -->
+    <section id="workExp" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="card">
+          <h3>Cloud Peritus - Salesforce Developer (2023–Present)</h3>
+          <ul>
+            <li>Designing and developing custom Salesforce solutions.</li>
+            <li>Automating processes using Flow, Process Builder, and Apex.</li>
+            <li>Building Lightning Web Components for dynamic UI.</li>
+            <li>Managing user profiles, permissions, and security controls.</li>
+          </ul>
         </div>
+        <div class="card">
+          <h3>ATMECS Global - Software Engineer (2020–2023)</h3>
+          <ul>
+            <li>Developed LWC, Apex classes, triggers, and reports.</li>
+            <li>Implemented permission sets, roles, and profiles.</li>
+            <li>Handled deployment using VS Code, Git, and Gearset.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Concentrix India - Technical Support Engineer (2018–2019)</h3>
+          <ul>
+            <li>Provided on-call support for Dell laptops — assisting with hardware and software issues.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<!--
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Weather Application</h3>
+            <p>Built using LWC integrated with OpenWeatherAPI, providing real-time weather updates within Salesforce.</p>
+          </div>
+          <div class="card">
+            <h3>Partner Management</h3>
+            <p>Created a Lightning-based partner management platform with LWC and Lightning Messaging Service for seamless communication.</p>
+          </div>
+          <div class="card">
+            <h3>To-Do List Application</h3>
+            <p>Designed an elegant to-do list app in Salesforce using LWC and SLDS for a sleek, modern UI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+
+    <section id="certifications" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="cert-list">
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified
+              Associate</a></li>
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified AI
+              Associate</a></li>
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified
+              Administrator</a></li>
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified
+              Platform Developer I</a></li>
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified
+              Platform Developer II</a></li>
+          <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce Certified
+              MuleSoft Developer I</a></li>
+        </ul>
+      </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <!-- Add your project details here -->
-            <div class="project">
-                <h3>Weather Application</h3>
-                <p>Developed a dynamic weather app using Lightning Web Components (LWC) in Salesforce, seamlessly
-                    integrated with the OpenWeatherAPI.
-                    This user-friendly application delivers real- time weather information.</p>
-            </div>
-            <div class="project">
-                <h3>Partner Management</h3>
-                <p>Partner Management project in Salesforce, utilizing Lightning Web Components to create a
-                    user-friendly platform for displaying partner details. Notably, I integrated the Lightning messaging
-                    service to enhance cross-component communication, resulting in a more
-                    seamless user experience.</p>
-            </div>
-            <div class="project">
-                <h3>To-Do-List Application</h3>
-                <p>Developed a user-friendly TodoList app in Salesforce with Lightning Web Components
-                    (LWC), incorporating Salesforce Lightning Design System (SLDS) for a visually appealing and
-                    cohesive user interface while streamlining task management for improved efficiency</p>
-            </div>
-            <!-- Add more projects as needed -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+          <span>Triggers</span>
+          <span>SOQL and SOSL</span>
+          <span>Flow</span>
+          <span>LWC & Aura</span>
+          <span>Batch, Queueable and Future Apex</span>
+          <span>Custom Metadata and Custom Settings</span>
+          <span>REST API integrations</span>
+          <span>Platform Events and Change Data Capture</span>
+          <span>Workbench</span>
+          <span>Postman</span>
+          <span>Data Loader</span>
+          <span>Data Import Wizard</span>
+          <span>Data Import Wizard</span>
+          <span>GitHub, GitLab, Bitbucket</span>
+          <span>Roles and Profiles Configuration</span>
+          <span>Permission Sets and Sharing Rules</span>
+          <span>Validation Rules and Record Types setup</span>
+          <span>Approval Processes</span>
+          <span>Assignment Rules, Auto-Response Rules</span>
         </div>
+      </div>
     </section>
 
-    <section id="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul>
-                <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce
-                        Associate</a></li>
-                <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce
-                        Certified Administrator</a></li>
-                <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Salesforce
-                        Certified Platform Developer I</a></li>
-                <li><a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank">Mulesoft
-                        Certified Developer - Level I</a></li>
-            </ul>
-        </div>
+    <section id="education" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <p><strong>B.E (Electronics & Telecommunications Engineering)</strong> — RTMNU — 7.93 CGPA</p>
+      </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>Salesforce Administration</li>
-            </ul>
-            <ul>
-                <li>Salesforce Development - Apex,Flow,LWC</li>
-            </ul>
-            <ul>
-                <li>HTML & CSS</li>
-            </ul>
-            <ul>
-                <li>Javascript</li>
-            </ul>
+    <section id="contact" class="section contactSection">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/shubham-maske-2920b414b/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+          <!-- <a href="https://twitter.com/shubhammaske04" target="_blank"><img src="images/twitter-sign.png" alt="Twitter"></a> -->
+          <a href="https://shubhammaske.hashnode.dev/" target="_blank"><img src="images/blogger.png" alt="Hashnode"></a>
+          <a href="https://www.salesforce.com/trailblazer/shubhamm1525" target="_blank"><img src="images/salesforce.png" alt="Salesforce"></a>
+          <a href="https://github.com/shubhamm1525" target="_blank"><img src="images/github.png" alt="GitHub"></a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li>B.E (Electronics & Telecommunications Engineering) - RTMNU - 7.93 CGPA</li>
-            </ul>
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2025 Shubham Maske. All rights reserved.</p>
+  </footer>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/shubham-maske-2920b414b/" target="_blank">
-                    <img src="images/linkedin.png" alt="LinkedIn Profile">
-                </a>
-                <a href="https://twitter.com/shubhammaske04" target="_blank">
-                    <img src="images/twitter-sign.png" alt="Twitter Profile">
-                </a>
-                <a href="https://shubhammaske.hashnode.dev/" target="_blank">
-                    <img src="images/blogger.png" alt="Hashnode Profile">
-                </a>
-                <a href="https://www.salesforce.com/trailblazer/shubhamm1525" target="_blank">
-                    <img src="images/salesforce.png" alt="Trailhead Profile">
-                </a>
-                <a href="https://github.com/shubhamm1525" target="_blank">
-                    <img src="images/github.png" alt="Github Profile">
-                </a>
-                <!-- Add more social handles as needed -->
-            </div>
-        </div>
-    </section>
+  <!-- 🌙 Dark Mode Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('darkToggle');
+      const body = document.body;
+      const navbar = document.querySelector('.navbar');
+      const toggleLabel = document.querySelector('.toggle-label');
 
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Shubham Maske</p>
-        </div>
-    </footer>
+      // Initialize theme: stored preference wins, otherwise system preference
+      const useDark = (stored === 'dark') || (!stored && prefersDark);
+      body.classList.toggle('dark-mode', useDark);
+      if (toggle) toggle.checked = useDark;
+      if (toggleLabel) toggleLabel.setAttribute('aria-checked', useDark ? 'true' : 'false');
+
+      // Theme toggle listener
+      if (toggle) {
+        toggle.addEventListener('change', () => {
+          const isDark = toggle.checked;
+          body.classList.toggle('dark-mode', isDark);
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          if (toggleLabel) toggleLabel.setAttribute('aria-checked', isDark ? 'true' : 'false');
+        });
+      }
+
+      // Navbar scroll behavior: lock (fixed) after threshold, hide on scroll-down, show on scroll-up
+      if (navbar) {
+        let lastY = window.scrollY || 0;
+        const lockThreshold = 80; // px before navbar becomes fixed
+        let ticking = false;
+
+        const onScroll = () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const currentY = window.scrollY || 0;
+
+              // Lock navbar (make fixed) when scrolled past threshold
+              if (currentY > lockThreshold) {
+                navbar.classList.add('navbar--locked');
+              } else {
+                navbar.classList.remove('navbar--locked');
+                navbar.classList.remove('navbar--hidden');
+              }
+
+              // Hide on scroll down, show on scroll up
+              if (currentY > lastY && currentY > lockThreshold + 20) {
+                // scrolling down
+                navbar.classList.add('navbar--hidden');
+              } else if (currentY < lastY) {
+                // scrolling up
+                navbar.classList.remove('navbar--hidden');
+              }
+
+              lastY = currentY;
+              ticking = false;
+            });
+            ticking = true;
+          }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+    });
+  </script>
 </body>
 
 </html>
-
-
-<!-- 
-
-
-
--->

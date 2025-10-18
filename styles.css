@@ -1,189 +1,447 @@
+/* ---------- Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: #f7f8fc;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-header {
-    background-color: #100a0a2b;
-    color: #000000;
-    text-align: center;
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, #0070f3, #4a90e2);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-header h1 {
-    margin: 0;
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-header p {
-    margin: 5px 0;
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
 }
 
-
-h2 {
-    color: #333;
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.9;
 }
 
-.project {
-    margin-bottom: 20px;
+.btn-primary {
+  display: inline-block;
+  background: white;
+  color: #0070f3;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.project h3{
-    border-bottom: 1px solid black;
+.btn-primary:hover {
+  background: #222;
+  color: #fff;
 }
 
-.workExp {
-    margin-bottom: 20px;
+/* Hero avatar (circular, centered) */
+.hero-avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.12);
+  z-index: 2;
 }
 
-.workExp h3{
-    border-bottom: 1px solid black;
+/* slightly smaller on small screens */
+@media (max-width: 480px) {
+  .hero-avatar {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 12px;
+    border-width: 3px;
+  }
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* dark mode border tweak for contrast */
+body.dark-mode .hero-avatar {
+  border: 3px solid rgba(255,255,255,0.18);
 }
 
-nav {
-    background-color: #333;
-    color: #fff;
+/* ---------- Dark Mode Toggle (simple switch) ---------- */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 1000; /* ensure it's above overlays */
+  display: flex;
+  align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+/* theme/logo */
+.theme-logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  color: #374151; /* uses currentColor in SVG via fill/currentColor */
+  flex: 0 0 auto;
+  transition: color 0.25s ease, opacity 0.2s ease;
 }
 
-nav li {
-    margin: 0 15px;
+/* brighten logo in dark mode for contrast */
+body.dark-mode .theme-logo {
+  color: #f8fafc;
 }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
+/* hide native checkbox but keep it for accessibility */
+#darkToggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
-nav a:hover {
-    color: #00ff44; /* Change the color on hover as per your preference */
+/* simple rounded slider */
+.toggle-label {
+  display: inline-block;
+  width: 48px;
+  height: 28px;
+  background: #d1d5db; /* light gray */
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.06);
 }
 
-section {
-    padding: 5px 0;
-    position: relative;
-    z-index: 1;
+/* knob */
+.toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform 0.18s ease, left 0.18s ease;
 }
 
-
-#certifications ul{
-    list-style: none;
-    margin: 0;
-    padding: 5px 0px 5px 0px;
-    text-decoration: none;
+/* checked state */
+#darkToggle:checked + .toggle-label {
+  background: #374151; /* darker surface */
 }
 
-
-#certifications ul li a{
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease-in-out;
+#darkToggle:checked + .toggle-label::after {
+  transform: translateX(20px);
 }
 
-#certifications ul li a:hover{
-    color:#54626F;
-    font-weight: bold;
+/* ensure high contrast in dark mode when switch shown over dark hero */
+body.dark-mode .toggle-label {
+  background: #475569;
 }
 
-#education ul{
-    list-style: none;
-    margin: 0;
-    padding: 5px 0px 5px 0px;
-    text-decoration: none;
+/* visually hidden text for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
-#education ul li a{
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease-in-out;
+/* ---------- Navbar ---------- */
+/* fix invalid declaration and ensure readable link colors in light mode */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s, color 0.3s, transform 0.25s ease;
+  will-change: transform;
 }
 
-#skills ul{
-    list-style: none;
-    margin: 0;
-    padding: 5px 0px 5px 0px;
-    text-decoration: none;
+/* state when navbar becomes fixed/locked after scrolling past threshold */
+.navbar--locked {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* sit above hero overlay and toggle */
+  box-shadow: 0 6px 18px rgba(2,6,23,0.2);
 }
 
-#skills ul li a{
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease-in-out;
+/* hidden when user scrolls down */
+.navbar--hidden {
+  transform: translateY(-110%);
 }
 
-
-
-#contact {
-    padding: 20px;
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 15px;
 }
 
-#contact h2 {
-    color: #333;
+.navbar a {
+  color: #222; /* readable on white */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
+/* hover color unchanged */
+.navbar a:hover {
+  color: #0070f3;
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding: 80px 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.bg-light {
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #0070f3;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0070f3;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, background 0.3s, color 0.3s;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* ---------- Skills ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skills span {
+  background: #0070f3;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Certifications (badge style like Skills) ---------- */
+.cert-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.cert-list li {
+  margin: 0;
+}
+
+.cert-list a {
+  display: inline-block;
+  background: #0070f3;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.15s ease, background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.cert-list a:hover,
+.cert-list a:focus {
+  transform: translateY(-3px);
+  background: #0056c8;
+  color: #fff;
+  outline: none;
+}
+
+/* accessible focus ring */
+.cert-list a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,112,243,0.18);
+  border-radius: 20px;
+}
+
+/* Override: keep certification badges same in dark mode as in light mode */
+body.dark-mode .cert-list a {
+  background: #0070f3; /* same as light mode badges */
+  color: #fff;
+  border: none;
+}
+
+body.dark-mode .cert-list a:hover,
+body.dark-mode .cert-list a:focus {
+  background: #0056c8; /* same hover as light mode */
+  color: #fff;
+}
+
+/* ---------- Social Links ---------- */
 .social-links {
-    display: flex; /* Display the social links in a row */
-    justify-content: space-between; /* Evenly distribute space between the links */
-    max-width: 300px; /* Adjust the maximum width as needed */
-    margin-top: 10px; /* Add spacing from the paragraph */
-}
-
-.social-links a {
-    display: block; /* Make the entire image a clickable block */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .social-links img {
-    width: 40px; /* Set the width of the images */
-    height: 40px; /* Set the height of the images */
-    border-radius: 50%; /* Create rounded corners for circular images */
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect on hover */
+  width: 40px;
+  transition: transform 0.3s, filter 0.25s ease, opacity 0.25s ease;
 }
 
-.social-links img:hover {
-    transform: scale(1.2); /* Scale up the image on hover */
+/* Make social icons visible on dark backgrounds (for monochrome dark PNGs/SVGs) */
+body.dark-mode .social-links img {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
+/* give the contact section a subtle surface in dark mode for readability */
+body.dark-mode .contactSection {
+  background: rgba(255,255,255,0.02);
+  padding-bottom: 40px; /* small spacing improvement */
+}
 
+/* ---------- Footer ---------- */
 footer {
-    background-color: #100a0a2b;
-    color: #080707;
-    text-align: center;
-    padding: 10px 0;
-    position: relative; /* Change from fixed to relative */
-    z-index: 2; /* Ensure the footer is above other sections */
-    clear: both; /* Clear the floats */
+  background: #0070f3;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  transition: background 0.3s, color 0.3s;
 }
 
-header,
-nav,
-section,
-footer {
-    border-bottom: 2px solid #ddd; /* Add a 1px solid border at the bottom */
-    padding: 20px 0;
+/* ---------- Dark Mode Styles ---------- */
+body.dark-mode {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .navbar {
+  background: #1e293b;
+}
+
+/* make sure navbar links are visible in dark */
+body.dark-mode .navbar a {
+  color: #e2e8f0;
+}
+
+/* readable cards / sections in dark */
+body.dark-mode .section.bg-light {
+  background: #0b1220;
+}
+
+body.dark-mode .card {
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+body.dark-mode .section-title {
+  color: #60a5fa;
+}
+
+/* adjust the primary button for dark mode */
+body.dark-mode .btn-primary {
+  background: #0b1220;
+  color: #60a5fa;
+  border: 1px solid rgba(96,165,250,0.12);
+}
+
+/* footer tweak for dark */
+body.dark-mode footer {
+  background: #1e3a8a;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+}
+
+/* Center education content and improve spacing */
+#education .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+/* limit width of the education text for better readability */
+#education .container p {
+  max-width: 760px;
 }
